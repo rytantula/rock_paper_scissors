@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function computerPlay() {
+        result = (Math.floor(Math.random() * 3)) + 1;
+        switch (result) {
+            case 1:
+                return 'Rock';
+                break;
+            case 2:
+                return 'Paper';
+                break;
+            case 3:
+                return 'Scissors';
+                break;
+            default:
+                break;
+        }
+    }
+
+    function singleRound (playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            return "It's a draw! Try again";
+        } else if (playerSelection == 'Rock') {
+            if (computerSelection == 'Paper') {
+                return "You Lose! Paper beats Rock";
+            } else if (computerSelection === 'Scissors') {
+                return "You Win! Rock beats Scissors";
+            }
+        } else if (playerSelection == 'Paper') {
+            if (computerSelection == 'Rock') {
+                return "You Win! Paper beats Rock";
+            } else if (computerSelection == 'Scissors') {
+                return "You Lose! Scissors beats Paper";
+            }
+        } else if (playerSelection == 'Scissors') {
+            if (computerSelection == 'Rock') {
+                return "You Lose! Rock beats Scissors";
+            } else if (computerSelection == 'Paper') {
+                return "You Win! Scissors beats Paper";
+            }
+        }
+    }
+            
+    console.log(singleRound('Paper', computerPlay()));
+</script>
+</html>
